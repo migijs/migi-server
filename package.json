@@ -1,0 +1,51 @@
+{
+  "name": "migi-server",
+  "version": "0.0.1",
+  "description": "String-Based && High-Performance Server Side Render Template for migi",
+  "maintainers": [
+    {
+      "name": "army8735",
+      "email": "army8735@qq.com"
+    }
+  ],
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/migijs/migi-server.git"
+  },
+  "keywords": [
+    "migijs",
+    "migi",
+    "server"
+  ],
+  "author": "army8735",
+  "license": "MIT",
+  "config": {
+    "blanket": {
+      "pattern": [
+        "migi-serer/build"
+      ]
+    }
+  },
+  "dependencies": {
+    "migi": "^4.0.1"
+  },
+  "devDependencies": {
+    "blanket": "^1.1.6",
+    "coveralls": "^2.11.2",
+    "expect.js": "^0.3.1",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-util": "^3.0.1",
+    "mocha": "^2.2.4",
+    "mocha-lcov-reporter": "^0.0.2",
+    "through2": "^2.0.0"
+  },
+  "main": "./index",
+  "engines": {
+    "node": ">= 6.0"
+  },
+  "readmeFilename": "README.md"
+}
