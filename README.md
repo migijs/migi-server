@@ -1,6 +1,6 @@
 # migi-server
 
-`migi-server`采用String-Based替代Virtual-Dom，用以提升`migi`在服务端模板渲染的性能，并且保持接口简单且完全一致。
+`migi-server`采用String-Based替代Virtual-Dom，用以提升`migi`在服务端模板渲染的性能，并且保持接口简单和完全一致。
 
 [![NPM version](https://badge.fury.io/js/migi-server.png)](https://npmjs.org/package/migi-server)
 [![Build Status](https://travis-ci.org/migijs/migi-server.svg?branch=master)](https://travis-ci.org/migijs/migi-server)
