@@ -25,12 +25,8 @@
   "config": {
     "blanket": {
       "pattern": [
-        "index.js",
-        "Component.js"
-      ],
-      "data-cover-never": [
-        "node_modules",
-        "test"
+        "migi-server/index.js",
+        "migi-server/Component.js"
       ]
     }
   },
