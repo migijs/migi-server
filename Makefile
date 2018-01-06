@@ -1,11 +1,10 @@
 build:
 	@gulp
 
-test: build
-	@mocha tests/test.js -R spec
+test-mocha:
+	@mocha --timeout 5000 tests/test.js -R spec
 
-test-compress: build
-	@mocha --timeout 5000 -R spec
+test: build test-mocha
 
 coveralls:
 	@mocha tests/test.js --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js

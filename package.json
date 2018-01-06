@@ -30,18 +30,23 @@
     }
   },
   "dependencies": {
-    "migi": "^4.0.1"
+    "migi": "^4.1.0"
   },
   "devDependencies": {
-    "blanket": "^1.1.6",
-    "coveralls": "^2.11.2",
-    "expect.js": "^0.3.1",
-    "gulp": "^3.9.0",
-    "gulp-clean": "^0.3.1",
+    "babel-core": "~6.23.1",
+    "babel-preset-es2015": "~6.22.0",
+    "blanket": "~1.1.7",
+    "coveralls": "~2.11.2",
+    "expect.js": "~0.3.1",
+    "gulp": "~3.9.0",
+    "gulp-rename": "~1.2.2",
     "gulp-util": "^3.0.1",
-    "mocha": "^2.2.4",
-    "mocha-lcov-reporter": "^0.0.2",
-    "through2": "^2.0.0"
+    "jaw": "~3.0.0",
+    "lefty": "~3.8.0",
+    "migi-es6-shim": "*",
+    "mocha": "~2.2.5",
+    "mocha-lcov-reporter": "~0.0.2",
+    "through2": "~2.0.0"
   },
   "main": "./index",
   "engines": {
