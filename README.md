@@ -14,3 +14,9 @@ npm install migi-server
 
 # License
 [MIT License]
+
+#Benchmark
+
+migi x 13,752 ops/sec ±15.82% (66 runs sampled)
+migi-server x 39,949 ops/sec ±18.78% (77 runs sampled)
+Fastest is migi-server
