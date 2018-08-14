@@ -217,4 +217,5 @@ tests/**/script.js
 tests/*/*-lie.*
 reports/
 tests/test*.js
+tests/benchmark.js
 dist/migi

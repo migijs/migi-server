@@ -1,6 +1,6 @@
 {
   "name": "migi-server",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "String-Based && High-Performance Server Side Render Template for migi",
   "maintainers": [
     {
@@ -18,7 +18,7 @@
   "keywords": [
     "migijs",
     "migi",
-    "server"
+    "server render"
   ],
   "author": "army8735",
   "license": "MIT",
@@ -31,16 +31,16 @@
     }
   },
   "dependencies": {
-    "migi": "^5.0.1"
+    "migi": "~6.0.0"
   },
   "devDependencies": {
-    "babel-core": "~6.23.1",
-    "babel-preset-es2015": "~6.22.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
     "benchmark": "^2.1.4",
     "blanket": "^1.2.3",
     "coveralls": "^3.0.0",
     "expect.js": "^0.3.1",
-    "gulp": "~3.9.0",
+    "gulp": "^3.9.1",
     "gulp-rename": "~1.2.2",
     "gulp-util": "^3.0.1",
     "jaw": "~4.0.0",
