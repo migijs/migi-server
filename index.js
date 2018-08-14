@@ -73,7 +73,7 @@ function createVd(name, props = [], children = [], uid = migi.uid++) {
       let special = attr.special(name, k);
       switch(special) {
         case attr.RENDER_EXIST:
-          if(v.v) {
+          if(v) {
             str += ' ' + k + '="' + s + '"';
           }
           break;

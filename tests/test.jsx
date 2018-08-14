@@ -113,6 +113,19 @@ class Component5 extends migi.Component {
 let cp5 = <Component5/>.toString();
 migi.resetUid();
 
+class Component6 extends migi.Component {
+  constructor(...data) {
+    super(...data);
+  }
+  render() {
+    return <div>
+      <input readOnly={ this.props.readonly } disabled={ this.props.disabled }/>
+    </div>;
+  }
+}
+let cp6 = <Component6 readonly={ true }/>.toString();
+migi.resetUid();
+
 migi = require('../');
 
 describe('vd', function() {
@@ -239,5 +252,19 @@ describe('cp', function() {
     }
     let res = migi.render(<Component5/>);
     expect(res).to.eql(cp5);
+  });
+  it('attr', function() {
+    class Component6 extends migi.Component {
+      constructor(...data) {
+        super(...data);
+      }
+      render() {
+        return <div>
+          <input readOnly={ this.props.readonly } disabled={ this.props.disabled }/>
+        </div>;
+      }
+    }
+    let res = migi.render(<Component6 readonly={ true }/>);
+    expect(res).to.eql(cp6);
   });
 });
