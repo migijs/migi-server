@@ -126,6 +126,18 @@ class Component6 extends migi.Component {
 let cp6 = <Component6 readonly={ true }/>.toString();
 migi.resetUid();
 
+class Component7 extends migi.Component {
+  constructor(...data) {
+    super(...data);
+    this.on(migi.Event.DOM, function() {});
+  }
+  render() {
+    return <p>1</p>;
+  }
+}
+let cp7 = <Component7/>.toString();
+migi.resetUid();
+
 migi = require('../');
 
 describe('vd', function() {
@@ -266,5 +278,18 @@ describe('cp', function() {
     }
     let res = migi.render(<Component6 readonly={ true }/>);
     expect(res).to.eql(cp6);
+  });
+  it('event', function() {
+    class Component7 extends migi.Component {
+      constructor(...data) {
+        super(...data);
+        this.on(migi.Event.DOM, function() {});
+      }
+      render() {
+        return <p>1</p>;
+      }
+    }
+    let res = migi.render(<Component7/>);
+    expect(res).to.eql(cp7);
   });
 });

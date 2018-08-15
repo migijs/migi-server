@@ -50,6 +50,7 @@ function spread(arr) {
 
 function Component(uid, props = [], children = []) {
   let self = this;
+  // 构建工具中都是arr，手写可能出现hash情况
   if(Array.isArray(props)) {
     self.props = arr2hash(props);
     self.__props = spread(props);
@@ -59,9 +60,8 @@ function Component(uid, props = [], children = []) {
     self.__props = hash2arr(props);
   }
   self.__uid = uid;
-  self.__ref = {};
+  self.__children = children;
   self.__bindHash = {};
-  self.children = children;
 
   self.__props.forEach(function(item, index) {
     let k = item[0];
@@ -86,22 +86,23 @@ Component.prototype.toString = function() {
 };
 
 Component.prototype.__initBind = function(name) {
-  if(this.__bindHash.hasOwnProperty(name)) {
-    return false;
-  }
-  return this.__bindHash[name] = true;
+  return !this.__bindHash.hasOwnProperty(name);
 };
 
 Component.prototype.__getBind = function(name) {
-  return this[name + '__'];
+  return this.__bindHash[name];
 };
 
 Component.prototype.__setBind = function(name, v) {
-  this.__bindHash[name] = true;
-  this[name + '__'] = v;
+  this.__bindHash[name] = v;
 };
 
-Component.prototype.__data = function() {};
+Component.prototype.__data
+  = Component.prototype.on
+  = Component.prototype.once
+  = Component.prototype.off
+  = Component.prototype.emit
+  = function() {};
 
 Object.defineProperties(Component.prototype, {
   model: {
@@ -110,6 +111,11 @@ Object.defineProperties(Component.prototype, {
     },
     set: function(v) {
       this.__model = v;
+    },
+  },
+  children: {
+    get: function() {
+      return this.__children;
     },
   },
 });
