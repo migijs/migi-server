@@ -1,6 +1,6 @@
 {
   "name": "migi-server",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "String-Based && High-Performance Server Side Render Template for migi",
   "maintainers": [
     {
@@ -18,7 +18,7 @@
   "keywords": [
     "migijs",
     "migi",
-    "server render"
+    "server side render"
   ],
   "author": "army8735",
   "license": "MIT",
@@ -26,12 +26,13 @@
     "blanket": {
       "pattern": [
         "migi-server/index.js",
-        "migi-server/Component.js"
+        "migi-server/Component.js",
+        "migi-server/Obj.js"
       ]
     }
   },
   "dependencies": {
-    "migi": "~6.0.0"
+    "migi": "~7.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -43,9 +44,6 @@
     "gulp": "^3.9.1",
     "gulp-rename": "~1.2.2",
     "gulp-util": "^3.0.1",
-    "jaw": "~4.0.0",
-    "lefty": "~4.1.1",
-    "migi-es6-shim": "*",
     "mocha": "^4.1.0",
     "mocha-lcov-reporter": "^1.3.0",
     "through2": "~2.0.0"

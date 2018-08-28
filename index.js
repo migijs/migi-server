@@ -6,13 +6,14 @@
 
 const migi = require('migi');
 const Component = require('./Component');
+const Obj = require('./Obj');
 
-const Obj = migi.Obj;
 const attr = migi.attr;
 const util = migi.util;
 const selfClose = migi.selfClose;
 
 migi.Component = Component;
+migi.Obj = Obj;
 
 function render(element) {
   return element.str;
@@ -113,6 +114,9 @@ function renderChild(child) {
       s += renderChild(item);
     });
     return s;
+  }
+  else if(child instanceof Obj) {
+    return child.toString();
   }
   else if(child.str) {
     return child.str;

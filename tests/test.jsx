@@ -138,6 +138,43 @@ class Component7 extends migi.Component {
 let cp7 = <Component7/>.toString();
 migi.resetUid();
 
+class Component8 extends migi.Component {
+  constructor(...data) {
+    super(...data);
+    this.a = <span>1</span>;
+  }
+  @bind a
+  render() {
+    return <p>{ this.a }</p>;
+  }
+}
+let cp8 = <Component8/>.toString();
+migi.resetUid();
+
+class Component9 extends migi.Component {
+  constructor(...data) {
+    super(...data);
+    this.a = [<span>1</span>, '<div>'];
+  }
+  @bind a
+  render() {
+    return <p>{ this.a }</p>;
+  }
+}
+let cp9 = <Component9/>.toString();
+migi.resetUid();
+
+class Component10 extends migi.Component {
+  constructor(...data) {
+    super(...data);
+  }
+  render() {
+    return <p dangerouslySetInnerHTML={ '<span>1</span>' }></p>;
+  }
+}
+let cp10 = <Component10/>.toString();
+migi.resetUid();
+
 migi = require('../');
 
 describe('vd', function() {
@@ -291,5 +328,45 @@ describe('cp', function() {
     }
     let res = migi.render(<Component7/>);
     expect(res).to.eql(cp7);
+  });
+  it('obj', function() {
+    class Component8 extends migi.Component {
+      constructor(...data) {
+        super(...data);
+        this.a = <span>1</span>;
+      }
+      @bind a
+      render() {
+        return <p>{ this.a }</p>;
+      }
+    }
+    let res = migi.render(<Component8/>);
+    expect(res).to.eql(cp8);
+  });
+  it('obj arr', function() {
+    class Component9 extends migi.Component {
+      constructor(...data) {
+        super(...data);
+        this.a = [<span>1</span>, '<div>'];
+      }
+      @bind a
+      render() {
+        return <p>{ this.a }</p>;
+      }
+    }
+    let res = migi.render(<Component9/>);
+    expect(res).to.eql(cp9);
+  });
+  it('dangerouslySetInnerHTML', function() {
+    class Component10 extends migi.Component {
+      constructor(...data) {
+        super(...data);
+      }
+      render() {
+        return <p dangerouslySetInnerHTML={ '<span>1</span>' }></p>;
+      }
+    }
+    let res = migi.render(<Component10/>);
+    expect(res).to.eql(cp10);
   });
 });
