@@ -7,9 +7,9 @@ test-mocha:
 test: build test-mocha
 
 coveralls:
-	NODE_ENV=test YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha tests/test.js --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
+	@mocha tests/test.js --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
 
 test-cov:
-	./node_modules/.bin/mocha tests/test.js --require blanket -R html-cov > tests/coverage.html
+	@mocha tests/test.js --require blanket -R html-cov > tests/coverage.html
 
 .PHONY: build
