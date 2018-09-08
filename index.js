@@ -20,11 +20,19 @@ function render(element) {
 }
 
 function createCp(cp, props, children) {
+  if(Array.isArray(cp)) {
+    [cp, props, children] = [...cp];
+  }
   let c = new cp(migi.uid++, props, children);
   return c.toString();
 }
 
-function createVd(name, props = [], children = [], uid = migi.uid++) {
+function createVd(name, props, children, uid = migi.uid++) {
+  if(Array.isArray(name)) {
+    [name, props, children] = [...name];
+  }
+  props = props || [];
+  children = children || [];
   let res = {};
   let str = '<' + name;
   let dangerouslySetInnerHTML;
