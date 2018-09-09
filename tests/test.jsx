@@ -175,6 +175,17 @@ class Component10 extends migi.Component {
 let cp10 = <Component10/>.toString();
 migi.resetUid();
 
+class Component11 extends migi.Component {
+  constructor(data) {
+    super(data);
+  }
+  render() {
+    return <p>{ this.props.a }</p>;
+  }
+}
+let cp11 = <Component11 a="a"/>.toString();
+migi.resetUid();
+
 migi = require('../');
 
 describe('vd', function() {
@@ -368,5 +379,17 @@ describe('cp', function() {
     }
     let res = migi.render(<Component10/>);
     expect(res).to.eql(cp10);
+  });
+  it('constructor', function() {
+    class Component11 extends migi.Component {
+      constructor(data) {
+        super(data);
+      }
+      render() {
+        return <p>{ this.props.a }</p>;
+      }
+    }
+    let res = migi.render(<Component11 a="a"/>);
+    expect(res).to.eql(cp11);
   });
 });

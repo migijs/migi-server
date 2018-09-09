@@ -20,17 +20,11 @@ function render(element) {
 }
 
 function createCp(cp, props, children) {
-  if(Array.isArray(cp)) {
-    [cp, props, children] = [...cp];
-  }
-  let c = new cp(migi.uid++, props, children);
+  let c = new cp([migi.uid++, props, children]);
   return c.toString();
 }
 
 function createVd(name, props, children, uid = migi.uid++) {
-  if(Array.isArray(name)) {
-    [name, props, children] = [...name];
-  }
   props = props || [];
   children = children || [];
   let res = {};
@@ -126,7 +120,7 @@ function renderChild(child) {
   else if(child instanceof Obj) {
     return child.toString();
   }
-  else if(child.str) {
+  else if(child && child.str) {
     return child.str;
   }
   return util.encodeHtml(util.stringify(child));

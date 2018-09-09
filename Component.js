@@ -48,7 +48,12 @@ function spread(arr) {
   return arr;
 }
 
-function Component(uid, props = [], children = []) {
+function Component(uid, props, children) {
+  if(Array.isArray(uid)) {
+    [uid, props, children] = [...uid];
+  }
+  props = props || [];
+  children = children || [];
   let self = this;
   // 构建工具中都是arr，手写可能出现hash情况
   if(Array.isArray(props)) {
