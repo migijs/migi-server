@@ -1,6 +1,6 @@
 {
   "name": "migi-server",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "String-Based && High-Performance Server Side Render Template for migi",
   "maintainers": [
     {
@@ -32,7 +32,7 @@
     }
   },
   "dependencies": {
-    "migi": "~7.1.0"
+    "migi": "~7.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
